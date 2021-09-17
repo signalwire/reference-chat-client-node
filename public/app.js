@@ -92,9 +92,12 @@ ready(async function() {
     handlePresence(msg.uuid, msg.event);
   }
 
-  document.getElementById('send').onclick = function(e) {
+  document.getElementById('msgForm').onsubmit = function(e) {
     var msgBox = document.getElementById('messageBox');
-    sendMessage(msgBox.value);
-    msgBox.value = '';
+    if (msgBox.value != '') {
+      sendMessage(msgBox.value);
+      msgBox.value = '';
+    }
+    e.preventDefault();
   }
 });
