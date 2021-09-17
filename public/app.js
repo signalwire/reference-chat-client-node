@@ -55,6 +55,8 @@ function renderMessage(msg) {
     msgBox.appendChild(msgText);
     container.appendChild(msgBox);
   }
+
+  container.scrollTop = container.scrollHeight;
 }
 
 function sendMessage(text) {
